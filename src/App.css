@@ -1,38 +1,72 @@
 .App {
   text-align: center;
+  padding: 20px;
+  font-family: sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+main {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-top: 20px;
+}
+
+table {
+  width: 80%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+thead {
+  background-color: #f2f2f2;
+}
+
+/* === CSS CHO FORM THÊM SẢN PHẨM === */
+
+form {
+  display: flex;
+  flex-direction: column; /* Sắp xếp các phần tử theo chiều dọc */
+  gap: 15px; /* Tạo khoảng cách giữa các dòng */
+  width: 400px; /* Đặt chiều rộng cố định cho form */
+  margin: 0 auto; /* Căn giữa form */
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+form div {
+  display: flex;
+  align-items: center; /* Căn giữa label và input theo chiều dọc */
+}
+
+form label {
+  width: 120px; /* Đặt chiều rộng cố định cho các nhãn */
+  text-align: right; /* Căn phải cho chữ trong nhãn */
+  margin-right: 10px; /* Khoảng cách giữa nhãn và ô input */
+}
+
+form input,
+form textarea,
+form select {
+  flex: 1; /* Để các ô input tự động lấp đầy không gian còn lại */
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form button {
+  padding: 10px 15px;
+  background-color: #007bff;
   color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+form button:hover {
+  background-color: #0056b3;
 }
