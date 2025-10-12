@@ -48,7 +48,7 @@ const AddProductPage = () => {
             await productService.createProduct(newProduct);
 
             toast.success("Thêm sản phẩm thành công!");
-            navigate('/products'); // Chuyển về trang danh sách
+            navigate('/admin/products'); // Chuyển về trang danh sách
 
         } catch (error) {
             console.error('Lỗi khi thêm sản phẩm!', error);

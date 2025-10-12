@@ -44,7 +44,7 @@ const EditCategoryPage = () => {
             // Cập nhật danh mục với imageUrl cũ hoặc mới
             await categoryService.updateCategory(id, updatedCategoryData);
             toast.success('Cập nhật danh mục thành công!');
-            navigate('/categories');
+            navigate('/admin/categories');
 
         } catch (err) {
             console.error("Lỗi khi cập nhật!", err);

@@ -39,7 +39,7 @@ const AddCategoryPage = () => {
             await categoryService.createCategory(newCategory);
 
             toast.success('Thêm danh mục thành công!');
-            navigate('/categories'); // Quay về trang danh sách
+            navigate('/admin/categories'); // Quay về trang danh sách
 
         } catch (err) {
             console.error("Lỗi khi thêm danh mục!", err);

@@ -48,7 +48,7 @@ const CategoryListPage = () => {
         <div className="bg-white p-6 rounded-lg shadow-md">
             <div className="flex justify-between items-center mb-6">
                 <h2 className="text-2xl font-semibold">Danh sách Danh mục</h2>
-                <Link to="/add-category">
+                <Link to="add">
                     <button className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded transition-colors duration-200">
                        + Thêm mới
                     </button>
@@ -79,7 +79,7 @@ const CategoryListPage = () => {
                                 </td>
                                 <td className="py-4 px-6 text-sm text-gray-900">{category.name}</td>
                                 <td className="py-4 px-6 text-sm font-medium">
-                                    <Link to={`/edit-category/${category.id}`}>
+                                    <Link to={`${category.id}/edit`}>
                                         <button className="bg-blue-500 hover:bg-blue-600 text-white py-1 px-3 rounded text-xs mr-2">Sửa</button>
                                     </Link>
                                     <button className="bg-red-500 hover:bg-red-600 text-white py-1 px-3 rounded text-xs" onClick={() => handleDelete(category.id)}>Xóa</button>

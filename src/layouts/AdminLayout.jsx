@@ -18,6 +18,16 @@ export default function AdminLayout() {
         <nav className="mt-5 flex-1 overflow-y-auto">
           <ul className="space-y-1">
             <li>
+              <Link to="/admin/dashboard" className={`block p-4 rounded ${isActive("/admin/dashboard")}`}>
+                Dashboard
+              </Link>
+            </li>
+            <li>
+              <Link to="/admin/banner" className={`block p-4 rounded ${isActive("/admin/banners")}`}>
+                Banner
+              </Link>
+            </li>
+            <li>
               <Link to="/admin/products" className={`block p-4 rounded ${isActive("/admin/products")}`}>
                 Sản phẩm
               </Link>
@@ -27,11 +37,13 @@ export default function AdminLayout() {
                 Danh mục
               </Link>
             </li>
+            <li>
+              <Link to="/admin/users" className={`block p-4 rounded ${isActive("/admin/users")}`}>
+                Người dùng
+              </Link>
+            </li>
           </ul>
         </nav>
-        <div className="p-4 border-t border-gray-700">
-          <button className="w-full bg-red-500 hover:bg-red-600 text-white py-2 rounded">Đăng xuất</button>
-        </div>
       </aside>
 
       {/* Main */}

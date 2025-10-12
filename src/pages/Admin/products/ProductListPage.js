@@ -76,7 +76,7 @@ const ProductListPage = () => {
         <div className="bg-white p-6 rounded-lg shadow-md">
             <div className="flex justify-between items-center mb-6">
                 <h2 className="text-2xl font-semibold">Danh sách Sản phẩm</h2>
-                <Link to="/add-product">
+                <Link to="add">
                     <button className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded flex items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clipRule="evenodd" /></svg>
                         Thêm mới
@@ -143,7 +143,7 @@ const ProductListPage = () => {
                                 <td className="py-4 px-6 text-sm text-gray-500">{product.quantity}</td>
                                 <td className="py-4 px-6 text-sm text-gray-500">{product.description}</td>
                                 <td className="py-4 px-6 text-sm font-medium">
-                                    <Link to={`/edit-product/${product.id}`}>
+                                    <Link to={`${product.id}/edit`}>
                                         <button className="bg-blue-500 hover:bg-blue-600 text-white py-1 px-3 rounded text-xs mr-2">Sửa</button>
                                     </Link>
                                     <button className="bg-red-500 hover:bg-red-600 text-white py-1 px-3 rounded text-xs" onClick={() => handleDelete(product.id)}>Xóa</button>

@@ -71,7 +71,7 @@ const EditProductPage = () => {
             
             toast.success("Cập nhật sản phẩm thành công!");
             console.log("CẬP NHẬT THÀNH CÔNG. Đang chuyển hướng...");
-            navigate('/products');
+            navigate('/admin/products');
 
         } catch (error) {
             console.error("--- ĐÃ XẢY RA LỖI TRONG QUÁ TRÌNH SUBMIT ---", error);
