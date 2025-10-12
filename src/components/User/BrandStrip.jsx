@@ -1,6 +1,7 @@
 import React from "react";
 export default function BrandStrip(){
-  const items = ["Trái cây","Rau tươi","Thực phẩm khô","Tin tức"];
+  const items = ["Laptop", "Điện thoại", "Phụ kiện", "Tin công nghệ"]
+;
   return (
     <div className="container section">
       <div className="grid grid-4">

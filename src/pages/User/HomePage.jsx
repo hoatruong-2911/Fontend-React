@@ -9,31 +9,31 @@ import "./styles/HomePage.css";
 
 export default function HomePage() {
   const products = [
-    { id: 1, title: "Vải thiều loại to", price: "80.000₫" },
-    { id: 2, title: "Hồng đỏ Mỹ", price: "150.000₫" },
-    { id: 3, title: "Dưa leo Đà Lạt", price: "65.000₫" },
-    { id: 4, title: "Cà chua Đà Lạt", price: "30.000₫", oldPrice: "45.000₫", sale: 33 },
-    { id: 5, title: "Nho đỏ không hạt ÚC", price: "30.000₫", oldPrice: "45.000₫", sale: 33 },
-    { id: 6, title: "Dâu tây loại 1", price: "250.000₫", oldPrice: "320.000₫", sale: 22 },
-    { id: 7, title: "Quả Kiwi xanh", price: "250.000₫" },
-    { id: 8, title: "Chanh Dây đỏ Úc", price: "400.000₫", oldPrice: "460.000₫", sale: 13 },
+    { id: 1, title: "Laptop Dell Inspiron 15", price: "18.990.000₫", oldPrice: "20.990.000₫", sale: 10 },
+    { id: 2, title: "MacBook Air M2 13-inch", price: "29.990.000₫", oldPrice: "32.990.000₫", sale: 9 },
+    { id: 3, title: "iPhone 15 Pro Max 256GB", price: "34.990.000₫" },
+    { id: 4, title: "Tai nghe AirPods Pro 2", price: "5.990.000₫", oldPrice: "6.990.000₫", sale: 14 },
+    { id: 5, title: "Chuột Logitech MX Master 3S", price: "2.490.000₫" },
+    { id: 6, title: "Màn hình LG UltraWide 34”", price: "12.990.000₫", oldPrice: "14.990.000₫", sale: 13 },
+    { id: 7, title: "Bàn phím cơ Keychron K6", price: "2.190.000₫" },
+    { id: 8, title: "Loa Bluetooth JBL Charge 5", price: "4.490.000₫", oldPrice: "5.290.000₫", sale: 15 },
   ];
 
   const posts = [
-    {
-      id: 1,
-      title: "Kỹ thuật trồng rau sạch trong chậu xốp tại nhà đơn giản",
-      excerpt: "Tự trồng rau trong thùng xốp tại nhà là sự lựa chọn của rất nhiều gia đình...",
+     {
+    id: 1,
+    title: "Top 5 laptop văn phòng tốt nhất năm 2025",
+    excerpt: "Cùng điểm qua 5 mẫu laptop được ưa chuộng nhất năm 2025 với hiệu năng mạnh mẽ, pin lâu và thiết kế hiện đại...",
     },
     {
       id: 2,
-      title: "Tự chế món thạch sữa chua thanh long lung linh sắc màu",
-      excerpt: "Thạch sữa chua thanh long là món ăn tráng miệng tuyệt vời...",
+      title: "So sánh iPhone 15 Pro Max và Samsung Galaxy S24 Ultra",
+      excerpt: "Hai flagship mạnh mẽ nhất hiện nay: Ai sẽ chiến thắng trong cuộc đua hiệu năng, camera và pin?...",
     },
     {
       id: 3,
-      title: "Những loại trái cây Nhật đắt như vàng ròng đổ bộ về Việt Nam",
-      excerpt: "Nhật Bản là đất nước có nhiều loại hoa quả chất lượng...",
+      title: "Mẹo tối ưu hiệu suất máy tính Windows 11",
+      excerpt: "Hướng dẫn cách tăng tốc máy tính, dọn dẹp bộ nhớ và tối ưu hiệu năng chỉ với vài thao tác đơn giản...",
     },
   ];
 
@@ -43,20 +43,24 @@ export default function HomePage() {
       <section className="hero section">
         <div className="container hero-wrap">
           <div className="hero-text">
-            <h1>DuaLeo-X - Thực phẩm sạch an toàn</h1>
-            <p>Chúng tôi chuyên cung cấp các sản phẩm an toàn cho sức khỏe.</p>
-            <Link className="btn" to="/user/products">Mua ngay</Link>
+            <h1>TechZone — Thiết bị công nghệ chính hãng</h1>
+            <p>Nơi bạn tìm thấy laptop, điện thoại và phụ kiện với giá tốt, bảo hành uy tín.</p>
+            <div className="flex gap-2 mt-2">
+              <Link className="btn" to="/user/products?cat=laptop">Mua Laptop</Link>
+              <Link className="btn" to="/user/products?cat=smartphone">Mua Điện thoại</Link>
+            </div>
           </div>
           <div className="hero-banner" aria-hidden="true"></div>
         </div>
       </section>
+
 
       {/* Danh mục */}
       <section className="section">
         <div className="container">
           <h2 className="section-title">Danh mục</h2>
           <div className="grid grid-4">
-            {["Rau sạch", "Thịt tươi", "Hải sản tươi", "Hoa quả tươi"].map((t, i) => (
+            {["Laptop", "Điện thoại", "Máy tính bảng", "Phụ kiện công nghệ"].map((t, i) => (
               <div key={i} className="card cat">
                 <div className="thumb" aria-hidden="true"></div>
                 <div className="card-body" style={{ fontWeight: 800 }}>{t}</div>
@@ -66,21 +70,22 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Trái cây mỗi ngày */}
+      {/* Sản phẩm nổi bật */}
       <section className="section">
         <div className="container">
           <div className="section-head">
-            <h2 className="section-title">Trái cây mỗi ngày</h2>
+            <h2 className="section-title">Sản phẩm nổi bật</h2>
             <CategoryTabs
               tabs={[
-                { label: "Rau củ", value: "rau-cu" },
-                { label: "Hoa quả", value: "hoa-qua" },
-                { label: "Thịt", value: "thit" },
-                { label: "Hải sản", value: "hai-san" },
+                { label: "Laptop", value: "laptop" },
+                { label: "Điện thoại", value: "smartphone" },
+                { label: "Phụ kiện", value: "phu-kien" },
+                { label: "Linh kiện", value: "linh-kien" },
               ]}
               onTab={() => {}}
             />
           </div>
+
           <div className="grid grid-4">
             {products.map((p) => (
               <ProductCard key={p.id} {...p} />
@@ -89,24 +94,25 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Rau tươi mới */}
+
+      {/* Laptop mới nhất */}
       <section className="section">
         <div className="container">
           <div className="section-head">
-            <h2 className="section-title">Rau tươi mới</h2>
+            <h2 className="section-title">Laptop mới nhất</h2>
             <CategoryTabs
               tabs={[
-                { label: "Rau củ", value: "rau-cu" },
-                { label: "Hoa quả", value: "hoa-qua" },
-                { label: "Thịt", value: "thit" },
-                { label: "Hải sản", value: "hai-san" },
+                { label: "Laptop văn phòng", value: "laptop-van-phong" },
+                { label: "Gaming", value: "gaming" },
+                { label: "MacBook", value: "macbook" },
+                { label: "Workstation", value: "workstation" },
               ]}
               onTab={() => {}}
             />
           </div>
           <div className="grid grid-4">
             {products
-              .concat([{ id: 9, title: "Nho Đà Lạt", price: "400.000₫" }])
+              .concat([{ id: 9, title: "Asus ZenBook 14 OLED", price: "23.990.000₫" }])
               .map((p) => (
                 <ProductCard key={p.id} {...p} />
               ))}
@@ -114,17 +120,17 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Thực phẩm khô */}
+      {/* Phụ kiện công nghệ */}
       <section className="section">
         <div className="container">
           <div className="section-head">
-            <h2 className="section-title">Thực phẩm khô</h2>
+            <h2 className="section-title">Phụ kiện công nghệ</h2>
             <CategoryTabs
               tabs={[
-                { label: "Rau củ", value: "rau-cu" },
-                { label: "Hoa quả", value: "hoa-qua" },
-                { label: "Thịt", value: "thit" },
-                { label: "Hải sản", value: "hai-san" },
+                { label: "Chuột & Bàn phím", value: "phu-kien" },
+                { label: "Tai nghe", value: "tai-nghe" },
+                { label: "Màn hình", value: "man-hinh" },
+                { label: "Thiết bị lưu trữ", value: "luu-tru" },
               ]}
               onTab={() => {}}
             />
@@ -137,11 +143,14 @@ export default function HomePage() {
         </div>
       </section>
 
+
       {/* Tin cập nhật */}
       <section className="section">
         <div className="container">
-          <h2 className="section-title">Tin cập nhật</h2>
-          <p className="muted">Tin tức vệ sinh an toàn thực phẩm cập nhật mới nhất mỗi ngày cho bạn</p>
+          <h2 className="section-title">Tin tức công nghệ</h2>
+          <p className="muted">
+            Cập nhật xu hướng mới nhất về laptop, smartphone và thiết bị công nghệ.
+          </p>
           <div className="grid grid-3">
             {posts.map((post) => (
               <BlogCard key={post.id} {...post} />
@@ -149,7 +158,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       <Testimonials />
       <BrandStrip />
     </div>
