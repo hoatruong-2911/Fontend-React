@@ -19,7 +19,7 @@ export default function RoutesUser() {
   return (
     <Routes>
       {/* NHÁNH 1: layout có Header/Footer */}
-      <Route element={<UserLayout />}>
+      <Route path="/" element={<UserLayout />}>
         <Route index element={<HomePage />} />
         <Route path="products" element={<ProductListPage />} />
         <Route path="product/:id" element={<ProductDetailPage />} />
@@ -30,14 +30,14 @@ export default function RoutesUser() {
         <Route path="about" element={<AboutPage />} />
       </Route>
 
-      {/* NHÁNH 2: layout trống cho login/register */}
+      {/* NHÁNH 2: layout trống cho login/register (dùng đường dẫn tuyệt đối) */}
       <Route element={<AuthLayout />}>
-        <Route path="login" element={<LoginPage />} />
-        <Route path="register" element={<RegisterPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
       </Route>
 
-      {/* fallback */}
-      <Route path="*" element={<Navigate to="/user" replace />} />
+      {/* fallback: đẩy về "/" thay vì "/user" */}
+      <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
 }
